@@ -1,0 +1,5 @@
+package com.finance.repositoryimpl;
+
+public class QuoteRepositoryImpl {
+
+}

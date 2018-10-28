@@ -1,0 +1,5 @@
+p ackage com.stock.dto;
+
+public class StockQuote {
+
+}

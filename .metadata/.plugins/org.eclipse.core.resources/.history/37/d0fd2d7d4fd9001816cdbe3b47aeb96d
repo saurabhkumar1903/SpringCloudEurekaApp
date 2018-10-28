@@ -1,0 +1,59 @@
+package com.finance.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.finance.model.Quotes;
+import com.finance.repository.QuoteRepositoryCustom;
+import com.finance.repository.QutoesRepository;
+import com.finance.service.FinanceService;
+
+@Service
+@Transactional
+public class FinanceServiceImpl implements FinanceService {
+
+	@Autowired
+	QutoesRepository quotesRepository;
+	
+	@Autowired
+	QuoteRepositoryCustom quoteRepositoryCustom;
+	
+	@Override
+	public List<String> findByUserName(String username) throws JsonProcessingException {
+		
+//		return quoteRepositoryCustom.findByUserName(username).stream().map(quote -> quote.getQuote())
+//				.collect(Collectors.toList());
+
+		ObjectMapper mapper = new ObjectMapper();
+		System.out.println(quotesRepository.findByUserName(username));
+		return quotesRepository.findByUserName(username).stream().map(quote -> quote.getQuote())
+		.collect(Collectors.toList());
+//		
+		//Object to JSON in String
+//		String jsonInString = mapper.writeValueAsString(quotesRepository.findByUserName(username).stream().map(quote -> quote.getQuote())
+//				.collect(Collectors.toList()));
+//		return jsonInString;
+		
+//		return "Hello";
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.finance.service.FinanceService#addUser(com.finance.model.Quotes)
+	 */
+	@Override
+	public List<String> addUser(Quotes quote) {
+		// TODO Auto-generated method stub
+		quotesRepository.save(quote);
+		return new ArrayList(Arrays.asList("Success"));
+	}
+
+}

@@ -1,0 +1,8 @@
+com\db\FinanceApplication.class
+com\db\repositoryimpl\QuoteRepositoryImpl.class
+com\db\repository\QutoesRepository.class
+com\db\repository\QuoteRepositoryCustom.class
+com\db\controller\FinanceController.class
+com\db\service\FinanceService.class
+com\db\model\Quotes.class
+com\db\serviceimpl\FinanceServiceImpl.class

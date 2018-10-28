@@ -1,0 +1,30 @@
+package com.finance.repositoryimpl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import com.finance.model.Quotes;
+import com.finance.repository.QuoteRepositoryCustom;
+
+@Repository
+@org.springframework.transaction.annotation.Transactional(readOnly=true)
+public class QuoteRepositoryImpl implements QuoteRepositoryCustom {
+
+	@PersistenceContext
+	EntityManager entityManager;
+	
+	@Override
+	public List<Quotes> findByUserName(String username) {
+		Query query=entityManager.createNativeQuery("Select quote from quotes where username=?;", Quotes.class);
+		query.setParameter(1,username);
+		
+		// TODO Auto-generated method stub
+		return query.getResultList();
+	}
+
+}

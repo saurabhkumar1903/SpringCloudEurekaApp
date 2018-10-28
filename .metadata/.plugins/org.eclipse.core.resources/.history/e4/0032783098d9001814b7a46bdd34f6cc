@@ -1,0 +1,51 @@
+package com.db.controller;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.db.model.Quotes;
+import com.db.service.FinanceService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+@Controller
+@RequestMapping(value="/db")
+public class FinanceController {
+	
+	static Logger log = LoggerFactory.getLogger(FinanceController.class);
+	@Autowired
+	FinanceService financeService;
+	
+	
+	@GetMapping("/welcome")
+	public String showWelcome() {
+		System.out.println("method hit");
+		log.info("method hit welcome");
+		return "Welcome to my World!";
+	}
+
+
+	@RequestMapping(value="/get/{username}")
+	public List<String> getQuote(@PathVariable("username") String username) throws JsonProcessingException
+	{
+		log.info("in getQuote[{}]",username);
+	return financeService.findByUserName(username);	
+	
+	}
+	
+	@PostMapping("/add")
+	public List<String> add(@RequestBody Quotes quote)
+	{
+		log.info("in add[{}]",quote);
+		return financeService.addUser(quote);
+	}
+}

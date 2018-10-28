@@ -1,0 +1,15 @@
+package com.finance.serviceimpl;
+
+import java.util.List;
+
+import com.finance.service.FinanceService;
+
+public class FinanceServiceImpl implements FinanceService {
+
+	@Override
+	public List<String> findByUserName(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

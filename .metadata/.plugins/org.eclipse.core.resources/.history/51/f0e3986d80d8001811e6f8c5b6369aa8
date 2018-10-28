@@ -1,0 +1,8 @@
+package com.finance.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class QutoesRepository {
+
+}

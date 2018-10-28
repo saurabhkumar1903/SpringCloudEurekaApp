@@ -1,0 +1,2 @@
+spring.application.name=finance-application
+server.port=8022

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: erureka-service
+    
+eureka:
+  client:
+    registryWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+  

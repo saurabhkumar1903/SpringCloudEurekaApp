@@ -1,0 +1,20 @@
+package com.finance.repositoryimpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.finance.model.Quotes;
+import com.finance.repository.QuoteRepositoryCustom;
+
+@Repository
+@Transactional
+public class QuoteRepositoryImpl implements QuoteRepositoryCustom {
+
+	@Override
+	public List<Quotes> findByUserName(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

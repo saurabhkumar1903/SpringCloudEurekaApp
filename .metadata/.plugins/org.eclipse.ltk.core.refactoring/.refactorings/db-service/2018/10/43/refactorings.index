@@ -1,0 +1,15 @@
+1540500209921	Rename package 'com.finance.application'
+1540580154608	Rename package 'com.finance'
+1540580166889	Rename package 'com.finance.controller'
+1540580185363	Rename package 'com.finance.model'
+1540580196401	Rename package 'com.finance.repository'
+1540580203758	Rename package 'comdb.repository'
+1540580215563	Rename package 'com.finance.repositoryimpl'
+1540580230218	Rename package 'com.finance.service'
+1540580243264	Rename package 'com.finance.serviceimpl'
+1540612170327	Delete element
+1540612200695	Delete element
+1540613848866	Rename package 'com.example.demo'
+1540613892453	Rename package 'com.db.service'
+1540614773537	Rename type 'FinanceService'
+1540629805485	Delete element

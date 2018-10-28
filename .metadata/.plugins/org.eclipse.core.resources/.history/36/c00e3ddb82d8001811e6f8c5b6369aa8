@@ -1,0 +1,23 @@
+package com.finance.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.finance.repository.QutoesRepository;
+import com.finance.service.FinanceService;
+
+public class FinanceServiceImpl implements FinanceService {
+
+	
+	@Autowired
+	QutoesRepository quotesRepository;
+	
+	@Override
+	public List<String> findByUserName(String username) {
+		// TODO Auto-generated method stub
+		return quotesRepository.findByUserName(username);
+		
+	}
+
+}

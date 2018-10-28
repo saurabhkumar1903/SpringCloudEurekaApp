@@ -1,0 +1,9 @@
+package com.finance.service;
+
+import java.util.List;
+
+public interface FinanceService {
+
+	List<String> findByUserName(String username);
+
+}

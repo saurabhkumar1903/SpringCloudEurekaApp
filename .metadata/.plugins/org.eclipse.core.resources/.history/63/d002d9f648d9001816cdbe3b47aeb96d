@@ -1,0 +1,47 @@
+package com.finance.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.finance.model.Quotes;
+import com.finance.repository.QuoteRepositoryCustom;
+import com.finance.repository.QutoesRepository;
+import com.finance.service.FinanceService;
+
+@Service
+@Transactional
+public class FinanceServiceImpl implements FinanceService {
+
+	@Autowired
+	QutoesRepository quotesRepository;
+	
+	@Autowired
+	QuoteRepositoryCustom quoteRepositoryCustom;
+	
+	@Override
+	public List<String> findByUserName(String username) {
+		
+//		return quoteRepositoryCustom.findByUserName(username).stream().map(quote -> quote.getQuote())
+//				.collect(Collectors.toList());
+
+		
+		return quotesRepository.findByUserName(username);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.finance.service.FinanceService#addUser(com.finance.model.Quotes)
+	 */
+	@Override
+	public List<String> addUser(Quotes quote) {
+		// TODO Auto-generated method stub
+		quotesRepository.save(quote);
+		return new ArrayList(Arrays.asList("Success"));
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.finance.repositoryimpl;
+
+import com.finance.repository.QuoteRepositoryCustom;
+
+public class QuoteRepositoryImpl implements QuoteRepositoryCustom {
+
+}

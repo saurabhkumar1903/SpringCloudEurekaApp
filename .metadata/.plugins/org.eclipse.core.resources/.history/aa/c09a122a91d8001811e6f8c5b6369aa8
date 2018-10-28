@@ -1,0 +1,18 @@
+package com.finance.application;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@Configuration
+@ComponentScan(basePackages = {"com.finance.application", "com.finance.controller","com.finance.model","com.finance.repository","com.finance.service","com.finance.serviceimpl"})
+@EnableJpaRepositories(basePackages= "com.finance")
+@SpringBootApplication
+public class FinanceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FinanceApplication.class, args);
+	}
+}
